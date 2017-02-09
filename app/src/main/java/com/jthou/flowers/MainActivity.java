@@ -8,8 +8,6 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Handler mHandler = new Handler();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +16,13 @@ public class MainActivity extends AppCompatActivity {
         ViewGroup content = (ViewGroup) findViewById(android.R.id.content);
         final RelativeLayout layout = (RelativeLayout) content.getChildAt(0);
 
-        mHandler.postDelayed(new Runnable() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 HeartView view = new HeartView(MainActivity.this);
                 layout.addView(view);
-                mHandler.postDelayed(this, 500);
+                handler.postDelayed(this, 500);
             }
         }, 1000);
     }
