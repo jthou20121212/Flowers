@@ -1,4 +1,4 @@
-# Flowers
+# PraiseView
 一个直播点赞的效果
 # 用法
     final Handler handler = new Handler();
