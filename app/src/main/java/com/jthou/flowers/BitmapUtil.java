@@ -31,11 +31,15 @@ public class BitmapUtil {
         Canvas canvas = sCanvas;
         canvas.setBitmap(bm);
         Paint p = sPaint;
+        // 画边框
         canvas.drawBitmap(heartBorder, 0, 0, p);
+        // 随机生成爱心颜色
         int color = Color.rgb(mRandom.nextInt(255), mRandom.nextInt(255), mRandom.nextInt(255));
+        // 设置ColorFilter
         p.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_ATOP));
         float dx = (heartBorder.getWidth() - heart.getWidth()) / 2f;
         float dy = (heartBorder.getHeight() - heart.getHeight()) / 2f;
+        // 因为边框图片比爱心图片大，爱心会在边框的中间
         canvas.drawBitmap(heart, dx, dy, p);
         p.setColorFilter(null);
         canvas.setBitmap(null);

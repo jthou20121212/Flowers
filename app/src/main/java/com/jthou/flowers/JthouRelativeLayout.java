@@ -111,4 +111,5 @@ public class JthouRelativeLayout extends RelativeLayout {
         scaleAnim.setDuration(2000);
         return scaleAnim;
     }
+
 }

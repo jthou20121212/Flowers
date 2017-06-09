@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewGroup content = (ViewGroup) findViewById(android.R.id.content);
+        final ViewGroup content = (ViewGroup) findViewById(android.R.id.content);
         final RelativeLayout layout = (RelativeLayout) content.getChildAt(0);
 
         final Handler handler = new Handler();
@@ -24,7 +24,21 @@ public class MainActivity extends AppCompatActivity {
                 layout.addView(view);
                 handler.postDelayed(this, 500);
             }
-        }, 1000);
+        }, 500);
+
+//        ViewGroup content = (ViewGroup) findViewById(android.R.id.content);
+//        final RelativeLayout layout = (RelativeLayout) content.getChildAt(0);
+//
+//        final Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                ImageView child = new ImageView(MainActivity.this);
+//                child.setImageBitmap(BitmapUtil.createHeart(MainActivity.this));
+//                layout.addView(child);
+//                handler.postDelayed(this, 500);
+//            }
+//        }, 1000);
     }
 
 }
